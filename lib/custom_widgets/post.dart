@@ -40,7 +40,7 @@ class _PostWidgetState extends State<PostWidget> {
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Row(
                 children: [
@@ -79,6 +79,9 @@ class _PostWidgetState extends State<PostWidget> {
               ),
             ],
           ),
+          SizedBox(
+            height: 10,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Text(
@@ -100,10 +103,11 @@ class _PostWidgetState extends State<PostWidget> {
                 )
               : Container(),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               LikeWidget(),
+              SizedBox(width: 10),
               CommentWidget(),
+              SizedBox(width: 10),
               ShareWidget(),
             ],
           ),
@@ -164,7 +168,7 @@ class _PostWidgetState extends State<PostWidget> {
         onPressed: () {},
         icon: Icon(
           Icons.share,
-          size: 18,
+          size: 16,
         ),
       ),
     );

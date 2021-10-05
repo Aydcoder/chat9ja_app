@@ -1,8 +1,10 @@
+import 'package:chat9ja/models/app.dart';
 import 'package:chat9ja/screens/users/screens/explore.dart';
 import 'package:flutter/material.dart';
 
 class UserPortal extends StatefulWidget {
-  const UserPortal({Key? key}) : super(key: key);
+  final App app;
+  const UserPortal({Key? key, required this.app}) : super(key: key);
 
   @override
   _UserPortalState createState() => _UserPortalState();
