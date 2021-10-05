@@ -1,5 +1,5 @@
 import 'package:chat9ja/models/app.dart';
-import 'package:chat9ja/screens/auth/splash.dart';
+import 'package:chat9ja/screens/auth/signup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: app.appName,
-      home: SplashScreen(
+      home: Signup(
         app: app,
       ),
     );
