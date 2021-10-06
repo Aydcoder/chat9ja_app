@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 
-class Signup extends StatefulWidget {
+class Signin extends StatefulWidget {
   final App app;
-  const Signup({Key? key, required this.app}) : super(key: key);
+  const Signin({Key? key, required this.app}) : super(key: key);
 
   @override
-  _SignupState createState() => _SignupState();
+  _SigninState createState() => _SigninState();
 }
 
-class _SignupState extends State<Signup> {
+class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,7 @@ class _SignupState extends State<Signup> {
                       height: 30,
                     ),
                     const Text(
-                      "Create an",
+                      "Welcome Back",
                       style: TextStyle(
                         color: Colors.white38,
                         fontWeight: FontWeight.bold,
@@ -39,7 +39,7 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     const Text(
-                      "Account",
+                      "Sign in Now",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -50,7 +50,7 @@ class _SignupState extends State<Signup> {
                       height: 10,
                     ),
                     const Text(
-                      "Create an account and get unlimited access\nto our app feature!",
+                      "Sign in to continue your social networking",
                       style: TextStyle(
                         color: Colors.white38,
                         fontWeight: FontWeight.w600,
@@ -61,20 +61,31 @@ class _SignupState extends State<Signup> {
                       height: 10,
                     ),
                     customTextField(
-                        caption: "Your Full Name",
-                        placeholder: "Christopher Henry",
-                        app: widget.app),
-                    customTextField(
-                        caption: "Your email address",
+                        caption: "Email or Username",
                         placeholder: "username@email.com",
                         app: widget.app),
                     customTextField(
-                        caption: "Set Password",
+                        caption: "Password",
                         placeholder: "Type Password",
                         app: widget.app,
                         obscureText: true),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: GestureDetector(
+                        child: const Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            color: Colors.white38,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ),
                     Button(
-                      caption: "Sign Up",
+                      caption: "Sign In",
                       app: widget.app,
                     ),
                     const SizedBox(
@@ -119,7 +130,7 @@ class _SignupState extends State<Signup> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Already have an account?",
+                    "Don't have an account?",
                     style: TextStyle(
                       color: Colors.white38,
                       fontSize: 14,
@@ -129,7 +140,7 @@ class _SignupState extends State<Signup> {
                     width: 10,
                   ),
                   Text(
-                    "Sign In",
+                    "Sign Up",
                     style: TextStyle(
                       color: widget.app.themeColor,
                       fontSize: 14,

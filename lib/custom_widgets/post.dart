@@ -22,12 +22,12 @@ class _PostWidgetState extends State<PostWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(15),
-      margin: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(15),
+      margin: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 10.0,
@@ -47,7 +47,7 @@ class _PostWidgetState extends State<PostWidget> {
                   CircleAvatar(
                     backgroundImage: AssetImage(widget.post.user.avatarUrl),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
                   Column(
@@ -55,7 +55,7 @@ class _PostWidgetState extends State<PostWidget> {
                     children: [
                       Text(
                         widget.post.user.displayName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Color(0XFF111129),
@@ -63,7 +63,7 @@ class _PostWidgetState extends State<PostWidget> {
                       ),
                       Text(
                         widget.post.createdAt,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12,
                           color: Color(0XFF111129),
                           fontWeight: FontWeight.normal,
@@ -75,18 +75,18 @@ class _PostWidgetState extends State<PostWidget> {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.more_horiz_outlined),
+                icon: const Icon(Icons.more_horiz_outlined),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Text(
               widget.post.caption ?? "",
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 14,
                 color: Color(0XFF111129),
                 fontWeight: FontWeight.w500,
@@ -104,11 +104,11 @@ class _PostWidgetState extends State<PostWidget> {
               : Container(),
           Row(
             children: [
-              LikeWidget(),
-              SizedBox(width: 10),
-              CommentWidget(),
-              SizedBox(width: 10),
-              ShareWidget(),
+              likeWidget(),
+              const SizedBox(width: 10),
+              commentWidget(),
+              const SizedBox(width: 10),
+              shareWidget(),
             ],
           ),
         ],
@@ -116,35 +116,33 @@ class _PostWidgetState extends State<PostWidget> {
     );
   }
 
-  Widget LikeWidget() {
-    return Container(
-        child: Row(
+  Widget likeWidget() {
+    return Row(
       children: [
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.thumb_up_alt_outlined,
             size: 18,
           ),
         ),
         Text(
           formatter.format(widget.post.likes),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),
         ),
       ],
-    ));
+    );
   }
 
-  Widget CommentWidget() {
-    return Container(
-        child: Row(
+  Widget commentWidget() {
+    return Row(
       children: [
         IconButton(
           onPressed: () {},
-          icon: Icon(
+          icon: const Icon(
             Icons.messenger_outline_rounded,
             size: 18,
           ),
@@ -153,23 +151,21 @@ class _PostWidgetState extends State<PostWidget> {
           formatter.format(
             widget.post.comments,
           ),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),
         ),
       ],
-    ));
+    );
   }
 
-  Widget ShareWidget() {
-    return Container(
-      child: IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.share,
-          size: 16,
-        ),
+  Widget shareWidget() {
+    return IconButton(
+      onPressed: () {},
+      icon: const Icon(
+        Icons.share,
+        size: 16,
       ),
     );
   }

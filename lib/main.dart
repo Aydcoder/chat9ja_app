@@ -1,5 +1,6 @@
 import 'package:chat9ja/models/app.dart';
-import 'package:chat9ja/screens/auth/signup.dart';
+import 'package:chat9ja/screens/auth/forgot_password.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: app.appName,
-      home: Signup(
+      home: ForgotPassword(
         app: app,
       ),
     );

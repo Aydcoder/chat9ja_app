@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class App {
-  final Color themeColor = Color(0XFF007AFF);
+  final Color themeColor = const Color(0XFF007AFF);
   final String appName = "Chat9ja";
   bool lightMode = false;
 
   App({required this.lightMode});
 
   Color bgColor() {
-    return lightMode ? Color(0XFFFCFEFF) : Color(0XFF131621);
+    return lightMode ? const Color(0XFFFCFEFF) : const Color(0XFF131621);
   }
 }

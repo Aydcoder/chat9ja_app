@@ -14,16 +14,16 @@ class _UserPortalState extends State<UserPortal> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFFFCFEFF),
+      backgroundColor: const Color(0XFFFCFEFF),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Chat9ja",
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Explore(),
+      body: const Explore(),
     );
   }
 }
