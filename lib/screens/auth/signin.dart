@@ -1,3 +1,4 @@
+import 'package:chat9ja/custom_widgets/auth_description.dart';
 import 'package:chat9ja/custom_widgets/button.dart';
 import 'package:chat9ja/custom_widgets/social_button.dart';
 import 'package:chat9ja/models/app.dart';
@@ -30,33 +31,10 @@ class _SigninState extends State<Signin> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text(
-                      "Welcome Back",
-                      style: TextStyle(
-                        color: Colors.white38,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    const Text(
-                      "Sign in Now",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 34,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      "Sign in to continue your social networking",
-                      style: TextStyle(
-                        color: Colors.white38,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
-                      ),
-                    ),
+                    AuthDescription(widget.app,
+                        line1: "Welcome Back",
+                        line2: "Sign in Now",
+                        line3: "Sign in to continue your social networking"),
                     const SizedBox(
                       height: 10,
                     ),
@@ -75,10 +53,12 @@ class _SigninState extends State<Signin> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
-                        child: const Text(
+                        child: Text(
                           "Forgot Password?",
                           style: TextStyle(
-                            color: Colors.white38,
+                            color: widget.app.lightMode
+                                ? Colors.black54
+                                : Colors.white54,
                             fontSize: 14,
                           ),
                         ),
@@ -91,11 +71,13 @@ class _SigninState extends State<Signin> {
                     const SizedBox(
                       height: 50,
                     ),
-                    const Center(
+                    Center(
                       child: Text(
                         "Or via social media",
                         style: TextStyle(
-                          color: Colors.white38,
+                          color: widget.app.lightMode
+                              ? Colors.black54
+                              : Colors.white54,
                           fontSize: 14,
                         ),
                         textAlign: TextAlign.center,
@@ -129,10 +111,12 @@ class _SigninState extends State<Signin> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     "Don't have an account?",
                     style: TextStyle(
-                      color: Colors.white38,
+                      color: widget.app.lightMode
+                          ? Colors.black54
+                          : Colors.white54,
                       fontSize: 14,
                     ),
                   ),
@@ -170,7 +154,7 @@ class _SigninState extends State<Signin> {
           caption,
           style: TextStyle(
             fontSize: 14,
-            color: app.lightMode ? Colors.black : Colors.white54,
+            color: app.lightMode ? Colors.black45 : Colors.white54,
             fontWeight: FontWeight.bold,
           ),
         ),

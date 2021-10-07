@@ -18,25 +18,25 @@ class _SplashScreenState extends State<SplashScreen> {
       title: "Privately Connected",
       description:
           "Chat9ja will allow you contact your friend safe and privately.",
-      imgUrl: "assets/images/illustration01.png",
+      imgUrl: "assets/images/splash/illustration01.png",
     ),
     const OnBoardModel(
       title: "Discover Forums",
       description:
           "Create or Discover a forum for discussion with your friend and more people.",
-      imgUrl: "assets/images/illustration02.png",
+      imgUrl: "assets/images/splash/illustration02.png",
     ),
     const OnBoardModel(
       title: "Build your Audience",
       description:
           "Analyze your data, start promoting and build your greate audience!",
-      imgUrl: "assets/images/illustration.png",
+      imgUrl: "assets/images/splash/illustration.png",
     ),
     const OnBoardModel(
       title: "Details Contact Info",
       description:
           "Analyze your data, start promoting and build your greate audience!",
-      imgUrl: "assets/images/illustration04.png",
+      imgUrl: "assets/images/splash/illustration04.png",
     ),
   ];
 
@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
             fontWeight: FontWeight.w900,
             letterSpacing: 0.15,
           ),
-          descriptionStyles: TextStyle(
+          descriptionStyles: const TextStyle(
             fontSize: 14,
             color: Colors.white38,
           ),
@@ -78,11 +78,11 @@ class _SplashScreenState extends State<SplashScreen> {
           skipButton: Container(),
           nextButton: GestureDetector(
             child: Container(
-              margin: EdgeInsets.only(top: 20),
+              margin: const EdgeInsets.only(top: 20),
               decoration: BoxDecoration(
                   color: widget.app.themeColor,
                   borderRadius: BorderRadius.circular(10)),
-              child: Center(
+              child: const Center(
                 child: Text("Sign In",
                     style: TextStyle(
                       fontSize: 16,

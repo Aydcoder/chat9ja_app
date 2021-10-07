@@ -228,7 +228,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
           caption,
           style: TextStyle(
             fontSize: 14,
-            color: app.lightMode ? Colors.black : Colors.white54,
+            color: app.lightMode ? Colors.black45 : Colors.white54,
             fontWeight: FontWeight.bold,
           ),
         ),

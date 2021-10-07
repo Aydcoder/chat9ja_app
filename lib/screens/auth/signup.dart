@@ -1,3 +1,4 @@
+import 'package:chat9ja/custom_widgets/auth_description.dart';
 import 'package:chat9ja/custom_widgets/button.dart';
 import 'package:chat9ja/custom_widgets/social_button.dart';
 import 'package:chat9ja/models/app.dart';
@@ -30,33 +31,11 @@ class _SignupState extends State<Signup> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text(
-                      "Create an",
-                      style: TextStyle(
-                        color: Colors.white38,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    const Text(
-                      "Account",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 34,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Text(
-                      "Create an account and get unlimited access\nto our app feature!",
-                      style: TextStyle(
-                        color: Colors.white38,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14,
-                      ),
-                    ),
+                    AuthDescription(widget.app,
+                        line1: "Create an",
+                        line2: "Account",
+                        line3:
+                            "Create an account and get unlimited access\nto our app feature!"),
                     const SizedBox(
                       height: 10,
                     ),
@@ -80,11 +59,13 @@ class _SignupState extends State<Signup> {
                     const SizedBox(
                       height: 50,
                     ),
-                    const Center(
+                    Center(
                       child: Text(
                         "Or via social media",
                         style: TextStyle(
-                          color: Colors.white38,
+                          color: widget.app.lightMode
+                              ? Colors.black54
+                              : Colors.white54,
                           fontSize: 14,
                         ),
                         textAlign: TextAlign.center,
@@ -118,10 +99,12 @@ class _SignupState extends State<Signup> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     "Already have an account?",
                     style: TextStyle(
-                      color: Colors.white38,
+                      color: widget.app.lightMode
+                          ? Colors.black54
+                          : Colors.white54,
                       fontSize: 14,
                     ),
                   ),
@@ -159,7 +142,7 @@ class _SignupState extends State<Signup> {
           caption,
           style: TextStyle(
             fontSize: 14,
-            color: app.lightMode ? Colors.black : Colors.white54,
+            color: app.lightMode ? Colors.black45 : Colors.white54,
             fontWeight: FontWeight.bold,
           ),
         ),

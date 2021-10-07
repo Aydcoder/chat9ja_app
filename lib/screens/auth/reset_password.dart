@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 
-class ForgotPassword extends StatefulWidget {
+class ResetPassword extends StatefulWidget {
   final App app;
-  const ForgotPassword({Key? key, required this.app}) : super(key: key);
+  const ResetPassword({Key? key, required this.app}) : super(key: key);
 
   @override
-  _ForgotPasswordState createState() => _ForgotPasswordState();
+  _ResetPasswordState createState() => _ResetPasswordState();
 }
 
-class _ForgotPasswordState extends State<ForgotPassword> {
+class _ResetPasswordState extends State<ResetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,18 +29,24 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   height: 30,
                 ),
                 AuthDescription(widget.app,
-                    line1: "Forgot Password?",
-                    line2: "Recover Now",
-                    line3: "Enter your email to reset your password"),
+                    line1: "Set your",
+                    line2: "Password",
+                    line3: "Please enter your new passwrord"),
                 const SizedBox(
                   height: 10,
                 ),
                 customTextField(
-                    caption: "Email or Username",
-                    placeholder: "username@email.com",
+                    caption: "Password",
+                    placeholder: "Type Password",
+                    obscureText: true,
                     app: widget.app),
+                customTextField(
+                    caption: "Confirm Password",
+                    placeholder: "Retype Password",
+                    app: widget.app,
+                    obscureText: true),
                 Button(
-                  caption: "Recover Now",
+                  caption: "Save",
                   app: widget.app,
                 ),
               ],

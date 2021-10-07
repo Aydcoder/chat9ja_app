@@ -10,4 +10,8 @@ class App {
   Color bgColor() {
     return lightMode ? const Color(0XFFFCFEFF) : const Color(0XFF131621);
   }
+
+  Color textColor() {
+    return lightMode ? const Color(0XFF212338) : Colors.white;
+  }
 }
