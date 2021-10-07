@@ -2,7 +2,7 @@ import 'package:chat9ja/models/user.dart';
 
 class Post {
   final User user;
-  final String? imageUrl;
+  final String imageUrl;
   final String? caption;
   final String createdAt;
   final int likes;
@@ -10,7 +10,7 @@ class Post {
 
   Post(
       {required this.user,
-      this.imageUrl,
+      required this.imageUrl,
       this.caption,
       required this.createdAt,
       required this.likes,

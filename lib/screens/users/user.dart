@@ -31,6 +31,7 @@ class _UserPortalState extends State<UserPortal> {
       ),
     ];
     return Scaffold(
+      // extendBody: true,
       backgroundColor: widget.app.bgColor(),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -42,7 +43,7 @@ class _UserPortalState extends State<UserPortal> {
       ),
       body: appBody[_selectedIndex],
       bottomNavigationBar: DotNavigationBar(
-        marginR: const EdgeInsets.all(20),
+        marginR: const EdgeInsets.only(left: 20, right: 20, top: 10),
         paddingR: EdgeInsets.only(bottom: 5, top: 5),
         backgroundColor:
             widget.app.lightMode ? const Color(0XFF000000) : Colors.black54,

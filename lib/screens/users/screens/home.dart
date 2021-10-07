@@ -1,5 +1,8 @@
+import 'package:chat9ja/custom_widgets/post.dart';
 import 'package:chat9ja/custom_widgets/story_avatar.dart';
 import 'package:chat9ja/models/app.dart';
+import 'package:chat9ja/models/post.dart';
+import 'package:chat9ja/models/user.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,9 +16,47 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    List<PostWidget> posts = <PostWidget>[
+      PostWidget(
+        Post(
+            comments: 1823,
+            likes: 10392,
+            createdAt: "Yesterday, 2:01 am",
+            caption:
+                "This is the caption to this post. Imagine this mumu of another grade",
+            user: User(
+                displayName: "Kingjoe",
+                avatarUrl: "assets/images/stories/story04.png"),
+            imageUrl: "assets/images/stories/story04.png"),
+        app: widget.app,
+      ),
+      PostWidget(
+        Post(
+            comments: 1823,
+            likes: 10392,
+            createdAt: "10:42 am",
+            caption:
+                "This is the caption to this post. Imagine this mumu of another grade",
+            user: User(
+                displayName: "LionTiger",
+                avatarUrl: "assets/images/stories/story05.png"),
+            imageUrl: "assets/images/stories/story01.jpeg"),
+        app: widget.app,
+      )
+    ];
     return Column(
       children: [
         stories(),
+        SizedBox(
+          height: 20,
+        ),
+        Expanded(
+          child: ListView.builder(
+              itemCount: posts.length,
+              itemBuilder: (context, index) {
+                return posts[index];
+              }),
+        )
       ],
     );
   }
