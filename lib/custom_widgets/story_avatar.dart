@@ -18,9 +18,9 @@ class StoryAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10),
       child: DashedCircle(
-        dashes: this.noOfStories,
+        dashes: noOfStories,
         color: app.themeColor,
         strokeWidth: .5,
         child: Padding(

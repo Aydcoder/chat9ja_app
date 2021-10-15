@@ -14,8 +14,6 @@ class UserPortal extends StatefulWidget {
 
 class _UserPortalState extends State<UserPortal> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   void _onItemTapped(int index) {
     setState(() {

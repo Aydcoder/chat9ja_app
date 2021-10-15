@@ -6,7 +6,7 @@ class AuthDescription extends StatelessWidget {
   final String line1;
   final String line2;
   final String line3;
-  AuthDescription(this.app,
+  const AuthDescription(this.app,
       {Key? key, required this.line1, required this.line2, required this.line3})
       : super(key: key);
 

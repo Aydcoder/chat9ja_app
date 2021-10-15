@@ -1,5 +1,5 @@
 import 'package:chat9ja/custom_widgets/auth_description.dart';
-import 'package:chat9ja/custom_widgets/button.dart';
+import 'package:http/http.dart' as http;
 import 'package:chat9ja/custom_widgets/social_button.dart';
 import 'package:chat9ja/models/app.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,15 @@ class Signin extends StatefulWidget {
 }
 
 class _SigninState extends State<Signin> {
+  test() async {
+    var url = Uri.parse('http://127.0.0.1:8000');
+    var response = await http.get(url);
+    print('Response status: ${response.statusCode}');
+    // print('Response body: ${response.body}');
+
+    // print(await http.read(Uri.parse('https://example.com/foobar.txt')));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,9 +73,24 @@ class _SigninState extends State<Signin> {
                         ),
                       ),
                     ),
-                    Button(
-                      caption: "Sign In",
-                      app: widget.app,
+                    GestureDetector(
+                      child: Container(
+                        padding: const EdgeInsets.all(15),
+                        margin: const EdgeInsets.only(top: 40),
+                        decoration: BoxDecoration(
+                            color: widget.app.themeColor,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text("Sign In",
+                              style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                              )),
+                        ),
+                      ),
+                      onTap: () {
+                        test();
+                      },
                     ),
                     const SizedBox(
                       height: 50,

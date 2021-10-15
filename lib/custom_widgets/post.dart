@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chat9ja/models/app.dart';
 import 'package:chat9ja/models/post.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +60,7 @@ class _PostWidgetState extends State<PostWidget> {
                           color: widget.app.textColor(),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
@@ -108,7 +107,7 @@ class _PostWidgetState extends State<PostWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.symmetric(vertical: 20),
             child: Row(
               children: [
                 likeWidget(),
@@ -133,7 +132,7 @@ class _PostWidgetState extends State<PostWidget> {
           size: 20,
           color: widget.app.textColor(),
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Text(
@@ -156,7 +155,7 @@ class _PostWidgetState extends State<PostWidget> {
           size: 20,
           color: widget.app.textColor(),
         ),
-        SizedBox(
+        const SizedBox(
           width: 5,
         ),
         Text(

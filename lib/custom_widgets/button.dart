@@ -2,10 +2,16 @@ import 'package:chat9ja/models/app.dart';
 import 'package:flutter/material.dart';
 
 class Button extends StatefulWidget {
+  final VoidCallback? onTap;
   final App app;
   final String caption;
   final Function? todo;
-  const Button({Key? key, required this.app, required this.caption, this.todo})
+  const Button(
+      {Key? key,
+      required this.app,
+      required this.caption,
+      this.todo,
+      this.onTap})
       : super(key: key);
 
   @override
@@ -30,7 +36,9 @@ class _ButtonState extends State<Button> {
               )),
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        widget.onTap;
+      },
     );
   }
 }
