@@ -1,6 +1,7 @@
 import 'package:chat9ja/models/app.dart';
 import 'package:chat9ja/screens/auth/signin.dart';
 import 'package:chat9ja/screens/auth/signup.dart';
+import 'package:chat9ja/screens/users/user.dart';
 
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: app.appName,
-      home: Signup(
+      home: UserPortal(
         app: app,
       ),
     );
