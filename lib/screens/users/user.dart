@@ -1,6 +1,7 @@
 import 'package:chat9ja/models/app.dart';
 import 'package:chat9ja/screens/users/screens/chats.dart';
 import 'package:chat9ja/screens/users/screens/home.dart';
+import 'package:chat9ja/screens/users/screens/notifications.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 
 import 'package:flutter/material.dart';
@@ -29,6 +30,9 @@ class _UserPortalState extends State<UserPortal> {
         app: widget.app,
       ),
       Chats(
+        app: widget.app,
+      ),
+      Notifications(
         app: widget.app,
       ),
     ];
