@@ -39,19 +39,62 @@ class _ChatState extends State<Chat> {
       ),
       body: Column(
         children: [
-          Container(
-            margin: const EdgeInsets.all(10),
-            padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-              color: Colors.white10,
-            ),
-            child: const Text(
-              "Hello there",
-              style: TextStyle(
-                color: Colors.white54,
-                fontSize: 16,
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  padding: const EdgeInsets.all(10),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(10),
+                      bottomRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                    ),
+                    color: Colors.white10,
+                  ),
+                  child: const Text(
+                    "Veniam Lorem sint occaecat ullamco enim officia sunt esse in nulla exercitation esse aute ipsum.",
+                    style: TextStyle(
+                      color: Colors.white54,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
               ),
-            ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white10,
+                  ),
+                  child: const Text(
+                    "Dolore irure do Lorem ut anim anim laborum ut.",
+                    style: TextStyle(
+                      color: Colors.white54,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+              ),
+            ],
           ),
         ],
       ),
