@@ -1,5 +1,7 @@
+import 'package:chat9ja/custom_widgets/message.dart';
 import 'package:chat9ja/models/app.dart';
 import 'package:chat9ja/models/list_chat_model.dart';
+import 'package:chat9ja/models/message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,6 +16,20 @@ class Chat extends StatefulWidget {
 class _ChatState extends State<Chat> {
   @override
   Widget build(BuildContext context) {
+    List _messages = [
+      Message(
+          content:
+              "Irure et cillum cupidatat fugiat adipisicing ad commodo eiusmod ipsum officia elit ullamco veniam aliquip. Id ullamco veniam id non cupidatat incididunt minim occaecat officia nostrud. Fugiat tempor dolore tempor sunt. Ut eu occaecat duis Lorem laborum in.",
+          time: "2:49 pm"),
+      Message(
+          content: "Magna adipisicing nulla qui cupidatat cillum.",
+          time: "2:49 pm"),
+      Message(
+          content:
+              "Eu consectetur sit occaecat proident irure magna aute mollit qui fugiat culpa ex fugiat. Sint elit nisi ipsum excepteur nostrud minim pariatur sint nostrud dolore elit irure elit sit. Enim eiusmod ipsum veniam fugiat officia culpa non amet commodo et qui dolor officia anim. Aliquip officia aliqua nulla est veniam aliquip elit laboris incididunt. Nulla deserunt ullamco nulla proident velit eiusmod ex non.",
+          time: "4:49 pm",
+          byLoggedInUser: true),
+    ];
     return Scaffold(
       backgroundColor: widget.chat.app.bgColor(),
       appBar: AppBar(
@@ -39,63 +55,19 @@ class _ChatState extends State<Chat> {
       ),
       body: Column(
         children: [
-          const SizedBox(
-            height: 10,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: ListView.builder(
+                itemCount: _messages.length,
+                itemBuilder: (context, index) {
+                  return MessageWidget(
+                      app: widget.chat.app, message: _messages[index]);
+                },
+              ),
+            ),
           ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10),
-                      bottomRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10),
-                    ),
-                    color: Colors.white10,
-                  ),
-                  child: const Text(
-                    "Veniam Lorem sint occaecat ullamco enim officia sunt esse in nulla exercitation esse aute ipsum.",
-                    style: TextStyle(
-                      color: Colors.white54,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white10,
-                  ),
-                  child: const Text(
-                    "Dolore irure do Lorem ut anim anim laborum ut.",
-                    style: TextStyle(
-                      color: Colors.white54,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
-              ),
-            ],
-          ),
+          _messageConstructor(),
         ],
       ),
     );
@@ -132,6 +104,39 @@ class _ChatState extends State<Chat> {
           ),
         ),
       ],
+    );
+  }
+
+  _messageConstructor() {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(color: Colors.black87),
+      child: Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.attach_file,
+              color: Colors.blue,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.insert_emoticon_outlined,
+              color: Colors.blue,
+            ),
+          ),
+          const Expanded(child: TextField()),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.send,
+              color: Colors.blue,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
